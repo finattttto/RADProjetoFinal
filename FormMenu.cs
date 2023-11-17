@@ -37,5 +37,25 @@ namespace RADProjetoFinal
             Close();
             Application.Exit();
         }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormCadastroMarcas().ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonIniciar_Click(object sender, EventArgs e)
+        {
+            new FormSimulacao().ShowDialog();
+        }
+
+        private void FormMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
