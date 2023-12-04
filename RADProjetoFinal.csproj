@@ -46,16 +46,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CorretoraDataSet.cs">
+      <DependentUpon>CorretoraDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CorretoraDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CorretoraDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdm.Designer.cs">
+      <DependentUpon>FormAdm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCadastroMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCadastroMarcas.Designer.cs">
       <DependentUpon>FormCadastroMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroModelo.Designer.cs">
+      <DependentUpon>FormCadastroModelo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
@@ -71,6 +86,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAdm.resx">
+      <DependentUpon>FormAdm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroMarcas.resx">
       <DependentUpon>FormCadastroMarcas.cs</DependentUpon>
     </EmbeddedResource>

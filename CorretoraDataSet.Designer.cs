@@ -693,7 +693,6 @@ namespace RADProjetoFinal {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ApolicesRow AddApolicesRow(
-                        int ApoliceID, 
                         ClientesRow parentClientesRowByFK__Apolices__Client__2C3393D0, 
                         int MarcaID, 
                         int ModeloID, 
@@ -713,7 +712,7 @@ namespace RADProjetoFinal {
                         decimal ValorPremio) {
                 ApolicesRow rowApolicesRow = ((ApolicesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ApoliceID,
+                        null,
                         null,
                         MarcaID,
                         ModeloID,
@@ -824,6 +823,9 @@ namespace RADProjetoFinal {
                 base.Columns.Add(this.columnValorPremio);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnApoliceID}, true));
+                this.columnApoliceID.AutoIncrement = true;
+                this.columnApoliceID.AutoIncrementSeed = -1;
+                this.columnApoliceID.AutoIncrementStep = -1;
                 this.columnApoliceID.AllowDBNull = false;
                 this.columnApoliceID.Unique = true;
                 this.columnChassi.AllowDBNull = false;
@@ -1193,26 +1195,10 @@ namespace RADProjetoFinal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ClientesRow AddClientesRow(
-                        int ClienteID, 
-                        string Nome, 
-                        string Endereco, 
-                        string CEP, 
-                        string Cidade, 
-                        string UF, 
-                        string Telefone, 
-                        string Celular, 
-                        string CPF, 
-                        string RG, 
-                        string OrgaoEmissor, 
-                        string CartMotorista, 
-                        System.DateTime EmissaoCartMot, 
-                        string CategoriaMot, 
-                        System.DateTime DataNascimento, 
-                        string Email) {
+            public ClientesRow AddClientesRow(string Nome, string Endereco, string CEP, string Cidade, string UF, string Telefone, string Celular, string CPF, string RG, string OrgaoEmissor, string CartMotorista, System.DateTime EmissaoCartMot, string CategoriaMot, System.DateTime DataNascimento, string Email) {
                 ClientesRow rowClientesRow = ((ClientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ClienteID,
+                        null,
                         Nome,
                         Endereco,
                         CEP,
@@ -1312,6 +1298,9 @@ namespace RADProjetoFinal {
                 base.Columns.Add(this.columnEmail);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnClienteID}, true));
+                this.columnClienteID.AutoIncrement = true;
+                this.columnClienteID.AutoIncrementSeed = -1;
+                this.columnClienteID.AutoIncrementStep = -1;
                 this.columnClienteID.AllowDBNull = false;
                 this.columnClienteID.Unique = true;
                 this.columnNome.AllowDBNull = false;
@@ -1559,10 +1548,10 @@ namespace RADProjetoFinal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MarcasRow AddMarcasRow(int ID, string Marca) {
+            public MarcasRow AddMarcasRow(string Marca) {
                 MarcasRow rowMarcasRow = ((MarcasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         Marca};
                 rowMarcasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMarcasRow);
@@ -1606,6 +1595,9 @@ namespace RADProjetoFinal {
                 base.Columns.Add(this.columnMarca);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnMarca.AllowDBNull = false;
@@ -1843,11 +1835,11 @@ namespace RADProjetoFinal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ModelosRow AddModelosRow(MarcasRow parentMarcasRowByFK__Modelos__MarcaID__2D27B809, int ModeloID, string Modelo) {
+            public ModelosRow AddModelosRow(MarcasRow parentMarcasRowByFK__Modelos__MarcaID__2D27B809, string Modelo) {
                 ModelosRow rowModelosRow = ((ModelosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        ModeloID,
+                        null,
                         Modelo};
                 if ((parentMarcasRowByFK__Modelos__MarcaID__2D27B809 != null)) {
                     columnValuesArray[0] = parentMarcasRowByFK__Modelos__MarcaID__2D27B809[0];
@@ -1900,6 +1892,9 @@ namespace RADProjetoFinal {
                                 this.columnMarcaID,
                                 this.columnModeloID}, true));
                 this.columnMarcaID.AllowDBNull = false;
+                this.columnModeloID.AutoIncrement = true;
+                this.columnModeloID.AutoIncrementSeed = -1;
+                this.columnModeloID.AutoIncrementStep = -1;
                 this.columnModeloID.AllowDBNull = false;
                 this.columnModelo.AllowDBNull = false;
                 this.columnModelo.MaxLength = 255;
@@ -2146,10 +2141,10 @@ namespace RADProjetoFinal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TabelaFIPERow AddTabelaFIPERow(int MarcaID, int ModeloID, int Ano, decimal Valor) {
+            public TabelaFIPERow AddTabelaFIPERow(int ModeloID, int Ano, decimal Valor) {
                 TabelaFIPERow rowTabelaFIPERow = ((TabelaFIPERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        MarcaID,
+                        null,
                         ModeloID,
                         Ano,
                         Valor};
@@ -2205,6 +2200,9 @@ namespace RADProjetoFinal {
                                 this.columnMarcaID,
                                 this.columnModeloID,
                                 this.columnAno}, true));
+                this.columnMarcaID.AutoIncrement = true;
+                this.columnMarcaID.AutoIncrementSeed = -1;
+                this.columnMarcaID.AutoIncrementStep = -1;
                 this.columnMarcaID.AllowDBNull = false;
                 this.columnModeloID.AllowDBNull = false;
                 this.columnAno.AllowDBNull = false;

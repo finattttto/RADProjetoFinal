@@ -12,9 +12,31 @@ namespace RADProjetoFinal
 {
     public partial class FormMenu : Form
     {
+
+        private FormAdm formAdm;
+
         public FormMenu()
         {
             InitializeComponent();
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.F5))
+            {
+                if (formAdm == null || formAdm.IsDisposed)
+                {
+                    formAdm = new FormAdm();
+                    formAdm.Show();
+                }
+                else
+                {
+                    formAdm.BringToFront();
+                }
+                return true;
+            }
+  
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
