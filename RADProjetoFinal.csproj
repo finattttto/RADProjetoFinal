@@ -92,6 +92,9 @@
     <EmbeddedResource Include="FormCadastroMarcas.resx">
       <DependentUpon>FormCadastroMarcas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroModelo.resx">
+      <DependentUpon>FormCadastroModelo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>

@@ -46,7 +46,7 @@ namespace RADProjetoFinal
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new FormCadastroModelo().ShowDialog();
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace RADProjetoFinal
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            new FormCadastroModelo().ShowDialog();
         }
 
         private void buttonIniciar_Click(object sender, EventArgs e)
