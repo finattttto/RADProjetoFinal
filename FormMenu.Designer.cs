@@ -83,6 +83,7 @@
             this.tabelaFipeToolStripMenuItem.Name = "tabelaFipeToolStripMenuItem";
             this.tabelaFipeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.tabelaFipeToolStripMenuItem.Text = "&Tabela Fipe";
+            this.tabelaFipeToolStripMenuItem.Click += new System.EventHandler(this.tabelaFipeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 

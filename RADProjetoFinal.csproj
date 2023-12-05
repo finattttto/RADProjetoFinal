@@ -72,6 +72,12 @@
     <Compile Include="FormCadastroModelo.Designer.cs">
       <DependentUpon>FormCadastroModelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroTabelaFipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroTabelaFipe.Designer.cs">
+      <DependentUpon>FormCadastroTabelaFipe.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroModelo.resx">
       <DependentUpon>FormCadastroModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroTabelaFipe.resx">
+      <DependentUpon>FormCadastroTabelaFipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>

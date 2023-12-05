@@ -2137,10 +2137,10 @@ namespace RADProjetoFinal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TabelaFIPERow AddTabelaFIPERow(int ModeloID, int Ano, decimal Valor) {
+            public TabelaFIPERow AddTabelaFIPERow(int MarcaID, int ModeloID, int Ano, decimal Valor) {
                 TabelaFIPERow rowTabelaFIPERow = ((TabelaFIPERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        MarcaID,
                         ModeloID,
                         Ano,
                         Valor};
@@ -2196,7 +2196,6 @@ namespace RADProjetoFinal {
                                 this.columnMarcaID,
                                 this.columnModeloID,
                                 this.columnAno}, true));
-                this.columnMarcaID.AutoIncrement = true;
                 this.columnMarcaID.AutoIncrementSeed = -1;
                 this.columnMarcaID.AutoIncrementStep = -1;
                 this.columnMarcaID.AllowDBNull = false;

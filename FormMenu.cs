@@ -79,5 +79,10 @@ namespace RADProjetoFinal
         {
 
         }
+
+        private void tabelaFipeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormCadastroTabelaFipe().ShowDialog();
+        }
     }
 }
