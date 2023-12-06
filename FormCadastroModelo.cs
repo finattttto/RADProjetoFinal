@@ -27,11 +27,14 @@ namespace RADProjetoFinal
 
         private void FormCadastroModelo_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.ViewModelos'. Você pode movê-la ou removê-la conforme necessário.
+            this.viewModelosTableAdapter.Fill(this.corretoraDataSet.ViewModelos);
             // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.Marcas'. Você pode movê-la ou removê-la conforme necessário.
             this.marcasTableAdapter.Fill(this.corretoraDataSet.Marcas);
             // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.Modelos'. Você pode movê-la ou removê-la conforme necessário.
             this.modelosTableAdapter.Fill(this.corretoraDataSet.Modelos);
 
         }
+
     }
 }

@@ -31,5 +31,24 @@ namespace RADProjetoFinal
         {
             new FormCadastroModelo().ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnModelos_Click(object sender, EventArgs e)
+        {
+            new FormListaModelo().ShowDialog();
+        }
+
+        private void btnTabelaFipe_Click(object sender, EventArgs e)
+        {
+            new FormListaTabelasFIPE().ShowDialog();
+        }
+
+        private void btnMarcas_Click(object sender, EventArgs e)
+        {
+            new FormCadastroMarcas().ShowDialog();
+        }
     }
 }
