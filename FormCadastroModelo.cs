@@ -33,12 +33,5 @@ namespace RADProjetoFinal
             this.modelosTableAdapter.Fill(this.corretoraDataSet.Modelos);
 
         }
-
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            //marcaComboBox.Visible = true;
-            //marcaLabel.Visible = true;
-
-        }
     }
 }

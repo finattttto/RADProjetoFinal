@@ -1,5 +1,4 @@
-﻿
-namespace RADProjetoFinal
+﻿namespace RADProjetoFinal
 {
     partial class FormCadastroTabelaFipe
     {
@@ -33,13 +32,22 @@ namespace RADProjetoFinal
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroTabelaFipe));
             System.Windows.Forms.Label anoLabel;
             System.Windows.Forms.Label valorLabel;
-            System.Windows.Forms.Label marcaIDLabel;
-            System.Windows.Forms.Label modeloIDLabel;
+            System.Windows.Forms.Label modeloLabel;
+            System.Windows.Forms.Label marcaLabel;
             this.corretoraDataSet = new RADProjetoFinal.CorretoraDataSet();
             this.tabelaFIPEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabelaFIPETableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.TabelaFIPETableAdapter();
             this.tableAdapterManager = new RADProjetoFinal.CorretoraDataSetTableAdapters.TableAdapterManager();
             this.tabelaFIPEBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.tabelaFIPEBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
@@ -50,26 +58,28 @@ namespace RADProjetoFinal
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anoTextBox = new System.Windows.Forms.TextBox();
             this.valorTextBox = new System.Windows.Forms.TextBox();
-            this.marcaIDComboBox = new System.Windows.Forms.ComboBox();
             this.modelosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.modelosTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.ModelosTableAdapter();
+            this.modeloComboBox = new System.Windows.Forms.ComboBox();
+            this.modelosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.marcasTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.MarcasTableAdapter();
-            this.modelosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.modeloIDComboBox = new System.Windows.Forms.ComboBox();
+            this.marcaComboBox = new System.Windows.Forms.ComboBox();
+            this.marcasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.modelosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             anoLabel = new System.Windows.Forms.Label();
             valorLabel = new System.Windows.Forms.Label();
-            marcaIDLabel = new System.Windows.Forms.Label();
-            modeloIDLabel = new System.Windows.Forms.Label();
+            modeloLabel = new System.Windows.Forms.Label();
+            marcaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaFIPEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaFIPEBindingNavigator)).BeginInit();
             this.tabelaFIPEBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaFIPEDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,23 +111,98 @@ namespace RADProjetoFinal
             // 
             this.tabelaFIPEBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.tabelaFIPEBindingNavigator.BindingSource = this.tabelaFIPEBindingSource;
-            this.tabelaFIPEBindingNavigator.CountItem = null;
+            this.tabelaFIPEBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.tabelaFIPEBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.tabelaFIPEBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tabelaFIPEBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.tabelaFIPEBindingNavigatorSaveItem});
             this.tabelaFIPEBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.tabelaFIPEBindingNavigator.MoveFirstItem = null;
-            this.tabelaFIPEBindingNavigator.MoveLastItem = null;
-            this.tabelaFIPEBindingNavigator.MoveNextItem = null;
-            this.tabelaFIPEBindingNavigator.MovePreviousItem = null;
+            this.tabelaFIPEBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.tabelaFIPEBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.tabelaFIPEBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.tabelaFIPEBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.tabelaFIPEBindingNavigator.Name = "tabelaFIPEBindingNavigator";
-            this.tabelaFIPEBindingNavigator.PositionItem = null;
-            this.tabelaFIPEBindingNavigator.Size = new System.Drawing.Size(872, 27);
+            this.tabelaFIPEBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.tabelaFIPEBindingNavigator.Size = new System.Drawing.Size(806, 25);
             this.tabelaFIPEBindingNavigator.TabIndex = 0;
             this.tabelaFIPEBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Posição";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 15);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -125,7 +210,7 @@ namespace RADProjetoFinal
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             // 
             // bindingNavigatorDeleteItem
@@ -134,7 +219,7 @@ namespace RADProjetoFinal
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorDeleteItem.Text = "Excluir";
             // 
             // tabelaFIPEBindingNavigatorSaveItem
@@ -157,100 +242,68 @@ namespace RADProjetoFinal
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.tabelaFIPEDataGridView.DataSource = this.tabelaFIPEBindingSource;
-            this.tabelaFIPEDataGridView.Location = new System.Drawing.Point(40, 47);
+            this.tabelaFIPEDataGridView.Location = new System.Drawing.Point(71, 61);
             this.tabelaFIPEDataGridView.Name = "tabelaFIPEDataGridView";
-            this.tabelaFIPEDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.tabelaFIPEDataGridView.RowTemplate.Height = 24;
-            this.tabelaFIPEDataGridView.Size = new System.Drawing.Size(731, 220);
+            this.tabelaFIPEDataGridView.Size = new System.Drawing.Size(601, 220);
             this.tabelaFIPEDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "MarcaID";
             this.dataGridViewTextBoxColumn1.HeaderText = "MarcaID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ModeloID";
             this.dataGridViewTextBoxColumn2.HeaderText = "ModeloID";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Ano";
             this.dataGridViewTextBoxColumn3.HeaderText = "Ano";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Valor";
             this.dataGridViewTextBoxColumn4.HeaderText = "Valor";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // anoLabel
             // 
             anoLabel.AutoSize = true;
-            anoLabel.Location = new System.Drawing.Point(42, 392);
+            anoLabel.Location = new System.Drawing.Point(75, 384);
             anoLabel.Name = "anoLabel";
-            anoLabel.Size = new System.Drawing.Size(37, 17);
+            anoLabel.Size = new System.Drawing.Size(29, 13);
             anoLabel.TabIndex = 2;
             anoLabel.Text = "Ano:";
             // 
             // anoTextBox
             // 
             this.anoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tabelaFIPEBindingSource, "Ano", true));
-            this.anoTextBox.Location = new System.Drawing.Point(85, 389);
+            this.anoTextBox.Location = new System.Drawing.Point(110, 381);
             this.anoTextBox.Name = "anoTextBox";
-            this.anoTextBox.Size = new System.Drawing.Size(100, 22);
+            this.anoTextBox.Size = new System.Drawing.Size(100, 20);
             this.anoTextBox.TabIndex = 3;
             // 
             // valorLabel
             // 
             valorLabel.AutoSize = true;
-            valorLabel.Location = new System.Drawing.Point(199, 392);
+            valorLabel.Location = new System.Drawing.Point(239, 384);
             valorLabel.Name = "valorLabel";
-            valorLabel.Size = new System.Drawing.Size(45, 17);
+            valorLabel.Size = new System.Drawing.Size(34, 13);
             valorLabel.TabIndex = 4;
             valorLabel.Text = "Valor:";
             // 
             // valorTextBox
             // 
             this.valorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tabelaFIPEBindingSource, "Valor", true));
-            this.valorTextBox.Location = new System.Drawing.Point(250, 389);
+            this.valorTextBox.Location = new System.Drawing.Point(279, 381);
             this.valorTextBox.Name = "valorTextBox";
-            this.valorTextBox.Size = new System.Drawing.Size(100, 22);
+            this.valorTextBox.Size = new System.Drawing.Size(100, 20);
             this.valorTextBox.TabIndex = 5;
-            // 
-            // marcaIDLabel
-            // 
-            marcaIDLabel.AutoSize = true;
-            marcaIDLabel.Location = new System.Drawing.Point(373, 394);
-            marcaIDLabel.Name = "marcaIDLabel";
-            marcaIDLabel.Size = new System.Drawing.Size(68, 17);
-            marcaIDLabel.TabIndex = 6;
-            marcaIDLabel.Text = "Marca ID:";
-            // 
-            // marcaIDComboBox
-            // 
-            this.marcaIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tabelaFIPEBindingSource, "MarcaID", true));
-            this.marcaIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tabelaFIPEBindingSource, "MarcaID", true));
-            this.marcaIDComboBox.DataSource = this.marcasBindingSource;
-            this.marcaIDComboBox.DisplayMember = "Marca";
-            this.marcaIDComboBox.FormattingEnabled = true;
-            this.marcaIDComboBox.Location = new System.Drawing.Point(447, 391);
-            this.marcaIDComboBox.Name = "marcaIDComboBox";
-            this.marcaIDComboBox.Size = new System.Drawing.Size(121, 24);
-            this.marcaIDComboBox.TabIndex = 7;
-            this.marcaIDComboBox.ValueMember = "ID";
             // 
             // modelosBindingSource
             // 
@@ -261,6 +314,33 @@ namespace RADProjetoFinal
             // 
             this.modelosTableAdapter.ClearBeforeFill = true;
             // 
+            // modeloLabel
+            // 
+            modeloLabel.AutoSize = true;
+            modeloLabel.Location = new System.Drawing.Point(397, 384);
+            modeloLabel.Name = "modeloLabel";
+            modeloLabel.Size = new System.Drawing.Size(45, 13);
+            modeloLabel.TabIndex = 6;
+            modeloLabel.Text = "Modelo:";
+            // 
+            // modeloComboBox
+            // 
+            this.modeloComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.modelosBindingSource, "Modelo", true));
+            this.modeloComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tabelaFIPEBindingSource, "ModeloID", true));
+            this.modeloComboBox.DataSource = this.modelosBindingSource2;
+            this.modeloComboBox.DisplayMember = "Modelo";
+            this.modeloComboBox.FormattingEnabled = true;
+            this.modeloComboBox.Location = new System.Drawing.Point(448, 381);
+            this.modeloComboBox.Name = "modeloComboBox";
+            this.modeloComboBox.Size = new System.Drawing.Size(121, 21);
+            this.modeloComboBox.TabIndex = 7;
+            this.modeloComboBox.ValueMember = "ModeloID";
+            // 
+            // modelosBindingSource1
+            // 
+            this.modelosBindingSource1.DataMember = "Modelos";
+            this.modelosBindingSource1.DataSource = this.corretoraDataSet;
+            // 
             // marcasBindingSource
             // 
             this.marcasBindingSource.DataMember = "Marcas";
@@ -270,32 +350,32 @@ namespace RADProjetoFinal
             // 
             this.marcasTableAdapter.ClearBeforeFill = true;
             // 
-            // modelosBindingSource1
+            // marcaLabel
             // 
-            this.modelosBindingSource1.DataMember = "Modelos";
-            this.modelosBindingSource1.DataSource = this.corretoraDataSet;
+            marcaLabel.AutoSize = true;
+            marcaLabel.Location = new System.Drawing.Point(573, 384);
+            marcaLabel.Name = "marcaLabel";
+            marcaLabel.Size = new System.Drawing.Size(40, 13);
+            marcaLabel.TabIndex = 8;
+            marcaLabel.Text = "Marca:";
             // 
-            // modeloIDLabel
+            // marcaComboBox
             // 
-            modeloIDLabel.AutoSize = true;
-            modeloIDLabel.Location = new System.Drawing.Point(574, 394);
-            modeloIDLabel.Name = "modeloIDLabel";
-            modeloIDLabel.Size = new System.Drawing.Size(75, 17);
-            modeloIDLabel.TabIndex = 8;
-            modeloIDLabel.Text = "Modelo ID:";
+            this.marcaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.marcasBindingSource, "Marca", true));
+            this.marcaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tabelaFIPEBindingSource, "MarcaID", true));
+            this.marcaComboBox.DataSource = this.marcasBindingSource1;
+            this.marcaComboBox.DisplayMember = "Marca";
+            this.marcaComboBox.FormattingEnabled = true;
+            this.marcaComboBox.Location = new System.Drawing.Point(619, 381);
+            this.marcaComboBox.Name = "marcaComboBox";
+            this.marcaComboBox.Size = new System.Drawing.Size(121, 21);
+            this.marcaComboBox.TabIndex = 9;
+            this.marcaComboBox.ValueMember = "ID";
             // 
-            // modeloIDComboBox
+            // marcasBindingSource1
             // 
-            this.modeloIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tabelaFIPEBindingSource, "ModeloID", true));
-            this.modeloIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tabelaFIPEBindingSource, "ModeloID", true));
-            this.modeloIDComboBox.DataSource = this.modelosBindingSource2;
-            this.modeloIDComboBox.DisplayMember = "Modelo";
-            this.modeloIDComboBox.FormattingEnabled = true;
-            this.modeloIDComboBox.Location = new System.Drawing.Point(655, 391);
-            this.modeloIDComboBox.Name = "modeloIDComboBox";
-            this.modeloIDComboBox.Size = new System.Drawing.Size(121, 24);
-            this.modeloIDComboBox.TabIndex = 9;
-            this.modeloIDComboBox.ValueMember = "ModeloID";
+            this.marcasBindingSource1.DataMember = "Marcas";
+            this.marcasBindingSource1.DataSource = this.corretoraDataSet;
             // 
             // modelosBindingSource2
             // 
@@ -304,13 +384,13 @@ namespace RADProjetoFinal
             // 
             // FormCadastroTabelaFipe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 518);
-            this.Controls.Add(modeloIDLabel);
-            this.Controls.Add(this.modeloIDComboBox);
-            this.Controls.Add(marcaIDLabel);
-            this.Controls.Add(this.marcaIDComboBox);
+            this.ClientSize = new System.Drawing.Size(806, 546);
+            this.Controls.Add(marcaLabel);
+            this.Controls.Add(this.marcaComboBox);
+            this.Controls.Add(modeloLabel);
+            this.Controls.Add(this.modeloComboBox);
             this.Controls.Add(valorLabel);
             this.Controls.Add(this.valorTextBox);
             this.Controls.Add(anoLabel);
@@ -327,8 +407,9 @@ namespace RADProjetoFinal
             this.tabelaFIPEBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaFIPEDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -343,7 +424,16 @@ namespace RADProjetoFinal
         private CorretoraDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator tabelaFIPEBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton tabelaFIPEBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView tabelaFIPEDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -353,12 +443,13 @@ namespace RADProjetoFinal
         private CorretoraDataSetTableAdapters.ModelosTableAdapter modelosTableAdapter;
         private System.Windows.Forms.TextBox anoTextBox;
         private System.Windows.Forms.TextBox valorTextBox;
-        private System.Windows.Forms.ComboBox marcaIDComboBox;
         private System.Windows.Forms.BindingSource modelosBindingSource;
         private CorretoraDataSetTableAdapters.MarcasTableAdapter marcasTableAdapter;
-        private System.Windows.Forms.BindingSource marcasBindingSource;
+        private System.Windows.Forms.ComboBox modeloComboBox;
         private System.Windows.Forms.BindingSource modelosBindingSource1;
-        private System.Windows.Forms.ComboBox modeloIDComboBox;
+        private System.Windows.Forms.BindingSource marcasBindingSource;
         private System.Windows.Forms.BindingSource modelosBindingSource2;
+        private System.Windows.Forms.ComboBox marcaComboBox;
+        private System.Windows.Forms.BindingSource marcasBindingSource1;
     }
 }
