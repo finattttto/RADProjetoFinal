@@ -47,6 +47,44 @@ namespace RADProjetoFinal
             buttonReturn.Visible = tabControl1.SelectedIndex != 0;
         }
 
+        private void calcularValoresApolice()
+        {
+            double valorApolice = 0.0;
+            double valorPremioInicial = 0.0;
+            double valorPremioTotal = 0.0;
+
+            valorApolice = Double.Parse(valorDoBemTextBox.Text) * 1.1;
+            valorPremioInicial = valorApolice * 0.015;
+            valorPremioTotal = valorApolice * 0.015;
+
+            if (checkBoxCoberturaRoubo.Checked)
+            {
+                valorPremioTotal += valorPremioInicial* 0.12;
+            }
+
+            if (checkBoxVidroGranizo.Checked)
+            {
+                valorPremioTotal += valorPremioInicial * 0.01;
+            }
+
+            if (checkBoxAcidentes.Checked)
+            {
+                valorPremioTotal += valorPremioInicial * 0.04;
+            }
+
+            if (checkBoxDanoTerceiros.Checked)
+            {
+                valorPremioTotal += valorPremioInicial * 0.05;
+            }
+
+            if (checkBoxFranquiaReduzida.Checked)
+            {
+                valorPremioTotal += valorPremioInicial * 0.03;
+            }
+
+            //CONTINUAR CALCULO ONDE COMEÇA AS DATAS DA CNH
+        }
+
         private void buttonAdvance_Click(object sender, EventArgs e)
         {
     
@@ -64,7 +102,6 @@ namespace RADProjetoFinal
                 {
                     this.Validate();
                     this.apolicesBindingSource.EndEdit();
-                    this.tableAdapterManager.UpdateAll(this.corretoraDataSet);
                 }
 
             }
@@ -83,45 +120,8 @@ namespace RADProjetoFinal
             }
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
+     
 
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
 
         // metodo que salva a apolice
         private void apolicesBindingNavigatorSaveItem_Click(object sender, EventArgs e)

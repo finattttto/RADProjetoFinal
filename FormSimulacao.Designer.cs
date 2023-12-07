@@ -36,9 +36,13 @@
             System.Windows.Forms.Label valorDoBemLabel;
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.valorDoBemTextBox = new System.Windows.Forms.TextBox();
+            this.modeloIDComboBox = new System.Windows.Forms.ComboBox();
             this.apolicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.corretoraDataSet = new RADProjetoFinal.CorretoraDataSet();
+            this.modelosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.marcaIDComboBox = new System.Windows.Forms.ComboBox();
+            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.valorDoBemTextBox = new System.Windows.Forms.TextBox();
             this.anoModeloTextBox = new System.Windows.Forms.TextBox();
             this.anoFabricacaoTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,11 +55,11 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxFranquiaReduzida = new System.Windows.Forms.CheckBox();
+            this.checkBoxDanoTerceiros = new System.Windows.Forms.CheckBox();
+            this.checkBoxAcidentes = new System.Windows.Forms.CheckBox();
+            this.checkBoxVidroGranizo = new System.Windows.Forms.CheckBox();
+            this.checkBoxCoberturaRoubo = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
@@ -64,11 +68,7 @@
             this.buttonAdvance = new System.Windows.Forms.Button();
             this.apolicesTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.ApolicesTableAdapter();
             this.tableAdapterManager = new RADProjetoFinal.CorretoraDataSetTableAdapters.TableAdapterManager();
-            this.marcaIDComboBox = new System.Windows.Forms.ComboBox();
-            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.marcasTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.MarcasTableAdapter();
-            this.modeloIDComboBox = new System.Windows.Forms.ComboBox();
-            this.modelosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.modelosTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.ModelosTableAdapter();
             marcaIDLabel = new System.Windows.Forms.Label();
             modeloIDLabel = new System.Windows.Forms.Label();
@@ -79,11 +79,11 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.apolicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // marcaIDLabel
@@ -168,13 +168,18 @@
             this.tabPage1.Text = "Etapa 1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // valorDoBemTextBox
+            // modeloIDComboBox
             // 
-            this.valorDoBemTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.apolicesBindingSource, "ValorDoBem", true));
-            this.valorDoBemTextBox.Location = new System.Drawing.Point(255, 369);
-            this.valorDoBemTextBox.Name = "valorDoBemTextBox";
-            this.valorDoBemTextBox.Size = new System.Drawing.Size(232, 26);
-            this.valorDoBemTextBox.TabIndex = 10;
+            this.modeloIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.apolicesBindingSource, "ModeloID", true));
+            this.modeloIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.modelosBindingSource, "Modelo", true));
+            this.modeloIDComboBox.DataSource = this.modelosBindingSource;
+            this.modeloIDComboBox.DisplayMember = "Modelo";
+            this.modeloIDComboBox.FormattingEnabled = true;
+            this.modeloIDComboBox.Location = new System.Drawing.Point(255, 203);
+            this.modeloIDComboBox.Name = "modeloIDComboBox";
+            this.modeloIDComboBox.Size = new System.Drawing.Size(232, 28);
+            this.modeloIDComboBox.TabIndex = 12;
+            this.modeloIDComboBox.ValueMember = "ModeloID";
             // 
             // apolicesBindingSource
             // 
@@ -185,6 +190,37 @@
             // 
             this.corretoraDataSet.DataSetName = "CorretoraDataSet";
             this.corretoraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // modelosBindingSource
+            // 
+            this.modelosBindingSource.DataMember = "Modelos";
+            this.modelosBindingSource.DataSource = this.corretoraDataSet;
+            // 
+            // marcaIDComboBox
+            // 
+            this.marcaIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.apolicesBindingSource, "MarcaID", true));
+            this.marcaIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.marcasBindingSource, "Marca", true));
+            this.marcaIDComboBox.DataSource = this.marcasBindingSource;
+            this.marcaIDComboBox.DisplayMember = "Marca";
+            this.marcaIDComboBox.FormattingEnabled = true;
+            this.marcaIDComboBox.Location = new System.Drawing.Point(255, 153);
+            this.marcaIDComboBox.Name = "marcaIDComboBox";
+            this.marcaIDComboBox.Size = new System.Drawing.Size(231, 28);
+            this.marcaIDComboBox.TabIndex = 11;
+            this.marcaIDComboBox.ValueMember = "ID";
+            // 
+            // marcasBindingSource
+            // 
+            this.marcasBindingSource.DataMember = "Marcas";
+            this.marcasBindingSource.DataSource = this.corretoraDataSet;
+            // 
+            // valorDoBemTextBox
+            // 
+            this.valorDoBemTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.apolicesBindingSource, "ValorDoBem", true));
+            this.valorDoBemTextBox.Location = new System.Drawing.Point(255, 369);
+            this.valorDoBemTextBox.Name = "valorDoBemTextBox";
+            this.valorDoBemTextBox.Size = new System.Drawing.Size(232, 26);
+            this.valorDoBemTextBox.TabIndex = 10;
             // 
             // anoModeloTextBox
             // 
@@ -228,7 +264,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Etapa 2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // label7
             // 
@@ -239,7 +274,6 @@
             this.label7.Size = new System.Drawing.Size(131, 25);
             this.label7.TabIndex = 22;
             this.label7.Text = "Combustivel: ";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -250,7 +284,6 @@
             this.label8.Size = new System.Drawing.Size(144, 25);
             this.label8.TabIndex = 21;
             this.label8.Text = "Número placa: ";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -261,7 +294,6 @@
             this.label9.Size = new System.Drawing.Size(153, 25);
             this.label9.TabIndex = 20;
             this.label9.Text = "Número chassi: ";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // comboBox4
             // 
@@ -278,7 +310,6 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(148, 28);
             this.comboBox4.TabIndex = 16;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // textBox2
             // 
@@ -286,7 +317,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(148, 26);
             this.textBox2.TabIndex = 15;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox6
             // 
@@ -294,7 +324,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(148, 26);
             this.textBox6.TabIndex = 13;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label12
             // 
@@ -308,11 +337,11 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.checkBox5);
-            this.tabPage3.Controls.Add(this.checkBox4);
-            this.tabPage3.Controls.Add(this.checkBox3);
-            this.tabPage3.Controls.Add(this.checkBox2);
-            this.tabPage3.Controls.Add(this.checkBox1);
+            this.tabPage3.Controls.Add(this.checkBoxFranquiaReduzida);
+            this.tabPage3.Controls.Add(this.checkBoxDanoTerceiros);
+            this.tabPage3.Controls.Add(this.checkBoxAcidentes);
+            this.tabPage3.Controls.Add(this.checkBoxVidroGranizo);
+            this.tabPage3.Controls.Add(this.checkBoxCoberturaRoubo);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
@@ -321,61 +350,60 @@
             this.tabPage3.Text = "Etapa 3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // checkBoxFranquiaReduzida
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox5.Location = new System.Drawing.Point(111, 313);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(191, 29);
-            this.checkBox5.TabIndex = 21;
-            this.checkBox5.Text = "Franquia reduzida";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBoxFranquiaReduzida.AutoSize = true;
+            this.checkBoxFranquiaReduzida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.checkBoxFranquiaReduzida.Location = new System.Drawing.Point(111, 313);
+            this.checkBoxFranquiaReduzida.Name = "checkBoxFranquiaReduzida";
+            this.checkBoxFranquiaReduzida.Size = new System.Drawing.Size(191, 29);
+            this.checkBoxFranquiaReduzida.TabIndex = 21;
+            this.checkBoxFranquiaReduzida.Text = "Franquia reduzida";
+            this.checkBoxFranquiaReduzida.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkBoxDanoTerceiros
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox4.Location = new System.Drawing.Point(111, 263);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(229, 29);
-            this.checkBox4.TabIndex = 20;
-            this.checkBox4.Text = "Danos contra terceiros";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBoxDanoTerceiros.AutoSize = true;
+            this.checkBoxDanoTerceiros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.checkBoxDanoTerceiros.Location = new System.Drawing.Point(111, 263);
+            this.checkBoxDanoTerceiros.Name = "checkBoxDanoTerceiros";
+            this.checkBoxDanoTerceiros.Size = new System.Drawing.Size(229, 29);
+            this.checkBoxDanoTerceiros.TabIndex = 20;
+            this.checkBoxDanoTerceiros.Text = "Danos contra terceiros";
+            this.checkBoxDanoTerceiros.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkBoxAcidentes
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox3.Location = new System.Drawing.Point(111, 213);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(300, 29);
-            this.checkBox3.TabIndex = 19;
-            this.checkBox3.Text = "Acidente de qualquer natureza";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.checkBoxAcidentes.AutoSize = true;
+            this.checkBoxAcidentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.checkBoxAcidentes.Location = new System.Drawing.Point(111, 213);
+            this.checkBoxAcidentes.Name = "checkBoxAcidentes";
+            this.checkBoxAcidentes.Size = new System.Drawing.Size(300, 29);
+            this.checkBoxAcidentes.TabIndex = 19;
+            this.checkBoxAcidentes.Text = "Acidente de qualquer natureza";
+            this.checkBoxAcidentes.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxVidroGranizo
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox2.Location = new System.Drawing.Point(111, 164);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(175, 29);
-            this.checkBox2.TabIndex = 18;
-            this.checkBox2.Text = "Vidros e granizo";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxVidroGranizo.AutoSize = true;
+            this.checkBoxVidroGranizo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.checkBoxVidroGranizo.Location = new System.Drawing.Point(111, 164);
+            this.checkBoxVidroGranizo.Name = "checkBoxVidroGranizo";
+            this.checkBoxVidroGranizo.Size = new System.Drawing.Size(175, 29);
+            this.checkBoxVidroGranizo.TabIndex = 18;
+            this.checkBoxVidroGranizo.Text = "Vidros e granizo";
+            this.checkBoxVidroGranizo.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkBoxCoberturaRoubo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox1.Location = new System.Drawing.Point(111, 117);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(91, 29);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "Roubo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxCoberturaRoubo.AutoSize = true;
+            this.checkBoxCoberturaRoubo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.checkBoxCoberturaRoubo.Location = new System.Drawing.Point(111, 117);
+            this.checkBoxCoberturaRoubo.Name = "checkBoxCoberturaRoubo";
+            this.checkBoxCoberturaRoubo.Size = new System.Drawing.Size(91, 29);
+            this.checkBoxCoberturaRoubo.TabIndex = 17;
+            this.checkBoxCoberturaRoubo.Text = "Roubo";
+            this.checkBoxCoberturaRoubo.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -460,45 +488,9 @@
             this.tableAdapterManager.TabelaFIPETableAdapter = null;
             this.tableAdapterManager.UpdateOrder = RADProjetoFinal.CorretoraDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // marcaIDComboBox
-            // 
-            this.marcaIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.apolicesBindingSource, "MarcaID", true));
-            this.marcaIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.marcasBindingSource, "Marca", true));
-            this.marcaIDComboBox.DataSource = this.marcasBindingSource;
-            this.marcaIDComboBox.DisplayMember = "Marca";
-            this.marcaIDComboBox.FormattingEnabled = true;
-            this.marcaIDComboBox.Location = new System.Drawing.Point(255, 153);
-            this.marcaIDComboBox.Name = "marcaIDComboBox";
-            this.marcaIDComboBox.Size = new System.Drawing.Size(231, 28);
-            this.marcaIDComboBox.TabIndex = 11;
-            this.marcaIDComboBox.ValueMember = "ID";
-            // 
-            // marcasBindingSource
-            // 
-            this.marcasBindingSource.DataMember = "Marcas";
-            this.marcasBindingSource.DataSource = this.corretoraDataSet;
-            // 
             // marcasTableAdapter
             // 
             this.marcasTableAdapter.ClearBeforeFill = true;
-            // 
-            // modeloIDComboBox
-            // 
-            this.modeloIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.apolicesBindingSource, "ModeloID", true));
-            this.modeloIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.modelosBindingSource, "Modelo", true));
-            this.modeloIDComboBox.DataSource = this.modelosBindingSource;
-            this.modeloIDComboBox.DisplayMember = "Modelo";
-            this.modeloIDComboBox.FormattingEnabled = true;
-            this.modeloIDComboBox.Location = new System.Drawing.Point(255, 203);
-            this.modeloIDComboBox.Name = "modeloIDComboBox";
-            this.modeloIDComboBox.Size = new System.Drawing.Size(232, 28);
-            this.modeloIDComboBox.TabIndex = 12;
-            this.modeloIDComboBox.ValueMember = "ModeloID";
-            // 
-            // modelosBindingSource
-            // 
-            this.modelosBindingSource.DataMember = "Modelos";
-            this.modelosBindingSource.DataSource = this.corretoraDataSet;
             // 
             // modelosTableAdapter
             // 
@@ -526,14 +518,14 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.apolicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -556,11 +548,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBoxAcidentes;
+        private System.Windows.Forms.CheckBox checkBoxVidroGranizo;
+        private System.Windows.Forms.CheckBox checkBoxCoberturaRoubo;
+        private System.Windows.Forms.CheckBox checkBoxFranquiaReduzida;
+        private System.Windows.Forms.CheckBox checkBoxDanoTerceiros;
         private CorretoraDataSet corretoraDataSet;
         private System.Windows.Forms.BindingSource apolicesBindingSource;
         private CorretoraDataSetTableAdapters.ApolicesTableAdapter apolicesTableAdapter;

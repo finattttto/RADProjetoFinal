@@ -60,6 +60,12 @@
     <Compile Include="FormAdm.Designer.cs">
       <DependentUpon>FormAdm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroCliente.Designer.cs">
+      <DependentUpon>FormCadastroCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAdm.resx">
       <DependentUpon>FormAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroCliente.resx">
+      <DependentUpon>FormCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroMarcas.resx">
       <DependentUpon>FormCadastroMarcas.cs</DependentUpon>
