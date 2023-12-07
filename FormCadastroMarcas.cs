@@ -17,13 +17,6 @@ namespace RADProjetoFinal
             InitializeComponent();
         }
 
-        private void FormCadastroMarcas_Load(object sender, EventArgs e)
-        {
-            // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.Marcas'. Você pode movê-la ou removê-la conforme necessário.
-            this.marcasTableAdapter.Fill(this.corretoraDataSet.Marcas);
-
-        }
-
         private void marcasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -31,7 +24,14 @@ namespace RADProjetoFinal
             this.tableAdapterManager.UpdateAll(this.corretoraDataSet);
 
         }
-            
+
+        private void FormCadastroMarcas_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.Marcas'. Você pode movê-la ou removê-la conforme necessário.
+            this.marcasTableAdapter.Fill(this.corretoraDataSet.Marcas);
+
+        }
+
         private void marcasDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

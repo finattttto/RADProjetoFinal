@@ -1,4 +1,5 @@
-﻿namespace RADProjetoFinal
+﻿
+namespace RADProjetoFinal
 {
     partial class FormCadastroModelo
     {
@@ -29,74 +30,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label modeloLabel;
-            System.Windows.Forms.Label modeloIDLabel;
-            System.Windows.Forms.Label marcaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroModelo));
             this.corretoraDataSet = new RADProjetoFinal.CorretoraDataSet();
             this.modelosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.modelosTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.ModelosTableAdapter();
             this.tableAdapterManager = new RADProjetoFinal.CorretoraDataSetTableAdapters.TableAdapterManager();
-            this.marcasTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.MarcasTableAdapter();
             this.modelosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.modelosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.modeloTextBox = new System.Windows.Forms.TextBox();
-            this.modeloIDTextBox = new System.Windows.Forms.TextBox();
-            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.marcaComboBox = new System.Windows.Forms.ComboBox();
-            this.marcasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.corretoraDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.viewModelosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.viewModelosTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.ViewModelosTableAdapter();
             this.modelosDataGridView = new System.Windows.Forms.DataGridView();
+            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.marcasTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.MarcasTableAdapter();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            modeloLabel = new System.Windows.Forms.Label();
-            modeloIDLabel = new System.Windows.Forms.Label();
-            marcaLabel = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelosBindingNavigator)).BeginInit();
             this.modelosBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewModelosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // modeloLabel
-            // 
-            modeloLabel.AutoSize = true;
-            modeloLabel.Location = new System.Drawing.Point(358, 395);
-            modeloLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            modeloLabel.Name = "modeloLabel";
-            modeloLabel.Size = new System.Drawing.Size(58, 17);
-            modeloLabel.TabIndex = 2;
-            modeloLabel.Text = "Modelo:";
-            // 
-            // modeloIDLabel
-            // 
-            modeloIDLabel.AutoSize = true;
-            modeloIDLabel.Location = new System.Drawing.Point(101, 395);
-            modeloIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            modeloIDLabel.Name = "modeloIDLabel";
-            modeloIDLabel.Size = new System.Drawing.Size(75, 17);
-            modeloIDLabel.TabIndex = 4;
-            modeloIDLabel.Text = "Modelo ID:";
-            // 
-            // marcaLabel
-            // 
-            marcaLabel.AutoSize = true;
-            marcaLabel.Location = new System.Drawing.Point(598, 391);
-            marcaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            marcaLabel.Name = "marcaLabel";
-            marcaLabel.Size = new System.Drawing.Size(51, 17);
-            marcaLabel.TabIndex = 6;
-            marcaLabel.Text = "Marca:";
             // 
             // corretoraDataSet
             // 
@@ -122,31 +86,103 @@
             this.tableAdapterManager.TabelaFIPETableAdapter = null;
             this.tableAdapterManager.UpdateOrder = RADProjetoFinal.CorretoraDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // marcasTableAdapter
-            // 
-            this.marcasTableAdapter.ClearBeforeFill = true;
-            // 
             // modelosBindingNavigator
             // 
             this.modelosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.modelosBindingNavigator.BindingSource = this.modelosBindingSource;
-            this.modelosBindingNavigator.CountItem = null;
+            this.modelosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.modelosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
             this.modelosBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.modelosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.modelosBindingNavigatorSaveItem});
             this.modelosBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.modelosBindingNavigator.MoveFirstItem = null;
-            this.modelosBindingNavigator.MoveLastItem = null;
-            this.modelosBindingNavigator.MoveNextItem = null;
-            this.modelosBindingNavigator.MovePreviousItem = null;
+            this.modelosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.modelosBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.modelosBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.modelosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.modelosBindingNavigator.Name = "modelosBindingNavigator";
-            this.modelosBindingNavigator.PositionItem = null;
-            this.modelosBindingNavigator.Size = new System.Drawing.Size(1067, 27);
+            this.modelosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.modelosBindingNavigator.Size = new System.Drawing.Size(800, 27);
             this.modelosBindingNavigator.TabIndex = 0;
             this.modelosBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Posição";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 20);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -171,65 +207,9 @@
             this.modelosBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.modelosBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("modelosBindingNavigatorSaveItem.Image")));
             this.modelosBindingNavigatorSaveItem.Name = "modelosBindingNavigatorSaveItem";
-            this.modelosBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
+            this.modelosBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
             this.modelosBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.modelosBindingNavigatorSaveItem.Click += new System.EventHandler(this.modelosBindingNavigatorSaveItem_Click);
-            // 
-            // modeloTextBox
-            // 
-            this.modeloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.modelosBindingSource, "Modelo", true));
-            this.modeloTextBox.Location = new System.Drawing.Point(426, 391);
-            this.modeloTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.modeloTextBox.Name = "modeloTextBox";
-            this.modeloTextBox.Size = new System.Drawing.Size(132, 22);
-            this.modeloTextBox.TabIndex = 3;
-            // 
-            // modeloIDTextBox
-            // 
-            this.modeloIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.modelosBindingSource, "ModeloID", true));
-            this.modeloIDTextBox.Location = new System.Drawing.Point(188, 391);
-            this.modeloIDTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.modeloIDTextBox.Name = "modeloIDTextBox";
-            this.modeloIDTextBox.Size = new System.Drawing.Size(132, 22);
-            this.modeloIDTextBox.TabIndex = 5;
-            // 
-            // marcasBindingSource
-            // 
-            this.marcasBindingSource.DataMember = "Marcas";
-            this.marcasBindingSource.DataSource = this.corretoraDataSet;
-            // 
-            // marcaComboBox
-            // 
-            this.marcaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.marcasBindingSource, "Marca", true));
-            this.marcaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.modelosBindingSource, "MarcaID", true));
-            this.marcaComboBox.DataSource = this.marcasBindingSource1;
-            this.marcaComboBox.DisplayMember = "Marca";
-            this.marcaComboBox.FormattingEnabled = true;
-            this.marcaComboBox.Location = new System.Drawing.Point(659, 387);
-            this.marcaComboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.marcaComboBox.Name = "marcaComboBox";
-            this.marcaComboBox.Size = new System.Drawing.Size(160, 24);
-            this.marcaComboBox.TabIndex = 7;
-            this.marcaComboBox.ValueMember = "ID";
-            // 
-            // marcasBindingSource1
-            // 
-            this.marcasBindingSource1.DataMember = "Marcas";
-            this.marcasBindingSource1.DataSource = this.corretoraDataSetBindingSource;
-            // 
-            // corretoraDataSetBindingSource
-            // 
-            this.corretoraDataSetBindingSource.DataSource = this.corretoraDataSet;
-            this.corretoraDataSetBindingSource.Position = 0;
-            // 
-            // viewModelosBindingSource
-            // 
-            this.viewModelosBindingSource.DataMember = "ViewModelos";
-            this.viewModelosBindingSource.DataSource = this.corretoraDataSet;
-            // 
-            // viewModelosTableAdapter
-            // 
-            this.viewModelosTableAdapter.ClearBeforeFill = true;
             // 
             // modelosDataGridView
             // 
@@ -242,12 +222,21 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn1});
             this.modelosDataGridView.DataSource = this.modelosBindingSource;
-            this.modelosDataGridView.Location = new System.Drawing.Point(12, 30);
+            this.modelosDataGridView.Location = new System.Drawing.Point(0, 32);
             this.modelosDataGridView.Name = "modelosDataGridView";
             this.modelosDataGridView.RowHeadersWidth = 51;
             this.modelosDataGridView.RowTemplate.Height = 24;
-            this.modelosDataGridView.Size = new System.Drawing.Size(1043, 300);
-            this.modelosDataGridView.TabIndex = 7;
+            this.modelosDataGridView.Size = new System.Drawing.Size(800, 433);
+            this.modelosDataGridView.TabIndex = 1;
+            // 
+            // marcasBindingSource
+            // 
+            this.marcasBindingSource.DataMember = "Marcas";
+            this.marcasBindingSource.DataSource = this.corretoraDataSet;
+            // 
+            // marcasTableAdapter
+            // 
+            this.marcasTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -266,24 +255,22 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "MarcaID";
+            this.dataGridViewTextBoxColumn1.DataSource = this.marcasBindingSource;
+            this.dataGridViewTextBoxColumn1.DisplayMember = "Marca";
             this.dataGridViewTextBoxColumn1.HeaderText = "MarcaID";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn1.ValueMember = "ID";
             // 
             // FormCadastroModelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 565);
+            this.ClientSize = new System.Drawing.Size(800, 468);
             this.Controls.Add(this.modelosDataGridView);
-            this.Controls.Add(marcaLabel);
-            this.Controls.Add(this.marcaComboBox);
-            this.Controls.Add(modeloIDLabel);
-            this.Controls.Add(this.modeloIDTextBox);
-            this.Controls.Add(modeloLabel);
-            this.Controls.Add(this.modeloTextBox);
             this.Controls.Add(this.modelosBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCadastroModelo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastroModelo";
@@ -293,11 +280,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.modelosBindingNavigator)).EndInit();
             this.modelosBindingNavigator.ResumeLayout(false);
             this.modelosBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewModelosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,20 +295,22 @@
         private CorretoraDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator modelosBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton modelosBindingNavigatorSaveItem;
-        private CorretoraDataSetTableAdapters.MarcasTableAdapter marcasTableAdapter;
-        private System.Windows.Forms.TextBox modeloTextBox;
-        private System.Windows.Forms.TextBox modeloIDTextBox;
-        private System.Windows.Forms.BindingSource marcasBindingSource;
-        private System.Windows.Forms.ComboBox marcaComboBox;
-        private System.Windows.Forms.BindingSource marcasBindingSource1;
-        private System.Windows.Forms.BindingSource corretoraDataSetBindingSource;
-        private System.Windows.Forms.BindingSource viewModelosBindingSource;
-        private CorretoraDataSetTableAdapters.ViewModelosTableAdapter viewModelosTableAdapter;
         private System.Windows.Forms.DataGridView modelosDataGridView;
+        private CorretoraDataSetTableAdapters.MarcasTableAdapter marcasTableAdapter;
+        private System.Windows.Forms.BindingSource marcasBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn1;
     }
 }

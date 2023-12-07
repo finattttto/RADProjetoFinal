@@ -77,6 +77,8 @@ namespace RADProjetoFinal
             // 
             // viewTabelasFIPEDataGridView
             // 
+            this.viewTabelasFIPEDataGridView.AllowUserToAddRows = false;
+            this.viewTabelasFIPEDataGridView.AllowUserToDeleteRows = false;
             this.viewTabelasFIPEDataGridView.AutoGenerateColumns = false;
             this.viewTabelasFIPEDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.viewTabelasFIPEDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -89,6 +91,7 @@ namespace RADProjetoFinal
             this.viewTabelasFIPEDataGridView.DataSource = this.viewTabelasFIPEBindingSource;
             this.viewTabelasFIPEDataGridView.Location = new System.Drawing.Point(12, 125);
             this.viewTabelasFIPEDataGridView.Name = "viewTabelasFIPEDataGridView";
+            this.viewTabelasFIPEDataGridView.ReadOnly = true;
             this.viewTabelasFIPEDataGridView.RowHeadersWidth = 51;
             this.viewTabelasFIPEDataGridView.RowTemplate.Height = 24;
             this.viewTabelasFIPEDataGridView.Size = new System.Drawing.Size(776, 266);
@@ -100,6 +103,7 @@ namespace RADProjetoFinal
             this.dataGridViewTextBoxColumn1.HeaderText = "Modelo";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -107,6 +111,7 @@ namespace RADProjetoFinal
             this.dataGridViewTextBoxColumn2.HeaderText = "Marca";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -114,6 +119,7 @@ namespace RADProjetoFinal
             this.dataGridViewTextBoxColumn3.HeaderText = "Ano";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -121,6 +127,7 @@ namespace RADProjetoFinal
             this.dataGridViewTextBoxColumn4.HeaderText = "Valor";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // lblPesquisaMarca
             // 

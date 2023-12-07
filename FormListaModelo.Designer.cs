@@ -74,6 +74,8 @@ namespace RADProjetoFinal
             // 
             // viewModelosDataGridView
             // 
+            this.viewModelosDataGridView.AllowUserToAddRows = false;
+            this.viewModelosDataGridView.AllowUserToDeleteRows = false;
             this.viewModelosDataGridView.AutoGenerateColumns = false;
             this.viewModelosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.viewModelosDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -85,10 +87,12 @@ namespace RADProjetoFinal
             this.viewModelosDataGridView.DataSource = this.viewModelosBindingSource;
             this.viewModelosDataGridView.Location = new System.Drawing.Point(12, 108);
             this.viewModelosDataGridView.Name = "viewModelosDataGridView";
+            this.viewModelosDataGridView.ReadOnly = true;
             this.viewModelosDataGridView.RowHeadersWidth = 51;
             this.viewModelosDataGridView.RowTemplate.Height = 24;
             this.viewModelosDataGridView.Size = new System.Drawing.Size(776, 323);
             this.viewModelosDataGridView.TabIndex = 1;
+            this.viewModelosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewModelosDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 

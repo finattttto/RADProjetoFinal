@@ -19,7 +19,6 @@ namespace RADProjetoFinal
 
         private void FormListaModelo_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.ViewModelos'. Você pode movê-la ou removê-la conforme necessário.
             this.viewModelosTableAdapter.Fill(this.corretoraDataSet.ViewModelos);
 
         }
@@ -42,7 +41,7 @@ namespace RADProjetoFinal
             new FormCadastroModelo().ShowDialog();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void viewModelosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

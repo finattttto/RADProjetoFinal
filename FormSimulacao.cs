@@ -39,26 +39,34 @@ namespace RADProjetoFinal
 
         private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // O índice da tab ativa mudou, atualiza a visibilidade do botão de voltar
             AtualizarVisibilidadeBotaoVoltar();
         }
 
         private void AtualizarVisibilidadeBotaoVoltar()
         {
-            // Se estiver na primeira tab, esconde o botão de voltar; caso contrário, mostra
             buttonReturn.Visible = tabControl1.SelectedIndex != 0;
         }
 
         private void buttonAdvance_Click(object sender, EventArgs e)
         {
-            // Verifica se há uma próxima tab
+    
             if (tabControl1.SelectedIndex < tabControl1.TabCount - 1)
             {
-                // Avança para a próxima tab
                 tabControl1.SelectedIndex++;
 
-                // Atualiza a visibilidade do botão de voltar com base na nova tab ativa
                 AtualizarVisibilidadeBotaoVoltar();
+
+                if(tabControl1.SelectedIndex == 3)
+                {
+
+                }
+                else if(tabControl1.SelectedIndex == 4)
+                {
+                    this.Validate();
+                    this.apolicesBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.corretoraDataSet);
+                }
+
             }
         }
 
