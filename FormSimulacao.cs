@@ -19,6 +19,10 @@ namespace RADProjetoFinal
 
         private void FormSimulacao_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.ViewModelos'. Você pode movê-la ou removê-la conforme necessário.
+            this.viewModelosTableAdapter.Fill(this.corretoraDataSet.ViewModelos);
+            // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.ViewTabelasFIPE'. Você pode movê-la ou removê-la conforme necessário.
+            this.viewTabelasFIPETableAdapter.Fill(this.corretoraDataSet.ViewTabelasFIPE);
             // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.Modelos'. Você pode movê-la ou removê-la conforme necessário.
             this.modelosTableAdapter.Fill(this.corretoraDataSet.Modelos);
             // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.Marcas'. Você pode movê-la ou removê-la conforme necessário.
@@ -52,10 +56,12 @@ namespace RADProjetoFinal
             double valorApolice = 0.0;
             double valorPremioInicial = 0.0;
             double valorPremioTotal = 0.0;
+            double valorFranquia = 0.0;
 
             valorApolice = Double.Parse(valorDoBemTextBox.Text) * 1.1;
             valorPremioInicial = valorApolice * 0.015;
             valorPremioTotal = valorApolice * 0.015;
+            valorFranquia = Double.Parse(valorDoBemTextBox.Text) * 0.06;
 
             if (checkBoxCoberturaRoubo.Checked)
             {
@@ -80,8 +86,13 @@ namespace RADProjetoFinal
             if (checkBoxFranquiaReduzida.Checked)
             {
                 valorPremioTotal += valorPremioInicial * 0.03;
+                valorFranquia = valorFranquia / 2; 
             }
 
+            // "F" + 2 como parametro em tostring fixa o ponto flutuante em 2 casas
+            lblValorApolice.Text += valorApolice.ToString("F" + 2);
+            lblValorPremio.Text += valorPremioTotal.ToString("F" + 2);
+            lblValorFranquia.Text += valorFranquia.ToString("F" + 2);
             //CONTINUAR CALCULO ONDE COMEÇA AS DATAS DA CNH
         }
 
@@ -96,7 +107,7 @@ namespace RADProjetoFinal
 
                 if(tabControl1.SelectedIndex == 3)
                 {
-
+                    calcularValoresApolice();
                 }
                 else if(tabControl1.SelectedIndex == 4)
                 {
@@ -131,6 +142,7 @@ namespace RADProjetoFinal
             this.tableAdapterManager.UpdateAll(this.corretoraDataSet);
 
         }
+
 
     }
 }
