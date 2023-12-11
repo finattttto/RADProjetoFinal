@@ -19,6 +19,8 @@ namespace RADProjetoFinal
 
         private void FormSimulacao_Load(object sender, EventArgs e)
         {
+           
+
             // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.TabelaFIPE'. Você pode movê-la ou removê-la conforme necessário.
             this.tabelaFIPETableAdapter.Fill(this.corretoraDataSet.TabelaFIPE);
             // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.ViewModelos'. Você pode movê-la ou removê-la conforme necessário.
@@ -29,8 +31,6 @@ namespace RADProjetoFinal
             this.modelosTableAdapter.Fill(this.corretoraDataSet.Modelos);
             // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.Marcas'. Você pode movê-la ou removê-la conforme necessário.
             this.marcasTableAdapter.Fill(this.corretoraDataSet.Marcas);
-            // TODO: esta linha de código carrega dados na tabela 'corretoraDataSet.Apolices'. Você pode movê-la ou removê-la conforme necessário.
-            this.apolicesTableAdapter.Fill(this.corretoraDataSet.Apolices);
             // Configurar o evento SelectedIndexChanged
             tabControl1.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
 
@@ -53,7 +53,7 @@ namespace RADProjetoFinal
             buttonReturn.Visible = tabControl1.SelectedIndex != 0;
         }
 
-        private void calcularValoresApolice()
+        private void calcularValoresIniciaisApolice()
         {
             try
             {
@@ -115,18 +115,18 @@ namespace RADProjetoFinal
 
                 if(tabControl1.SelectedIndex == 3)
                 {
-                    calcularValoresApolice();
+                    calcularValoresIniciaisApolice();
+                    buttonAdvance.Text = "Contratar";
                 }
 
             }
             else if (tabControl1.SelectedIndex == tabControl1.TabCount - 1)
             {
-                 Console.WriteLine("tab 4 avancar");
                  Console.WriteLine(this.apolicesBindingSource);
                 try
                 {
                     //new CadastrarCliente().ShowDialog();
-                    new FormCadastroCliente().ShowDialog();
+                    new FormCadastroCliente(this).ShowDialog();
                     //this.Validate();
                     //this.apolicesBindingSource.EndEdit();
                 }
@@ -137,30 +137,37 @@ namespace RADProjetoFinal
             }
         }
 
+        public void cadastrarApolice(int clienteId)
+        {
+            try
+            {
+
+                apolicesBindingSource.AddNew();
+                DataRowView currentRow = (DataRowView)apolicesBindingSource.Current;
+                currentRow["ClienteID"] = clienteId;
+                currentRow["Combustivel"] = comboBoxCombustivel.SelectedItem.ToString();
+                currentRow["Chassi"] = chassiTextBox.Text;
+                currentRow["Placa"] = placaTextBox.Text;
+                this.Validate();
+                this.apolicesBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.corretoraDataSet);
+            }catch (Exception ex){
+
+            }
+
+        }
+
         private void buttonReturn_Click(object sender, EventArgs e)
         {
-            // Verifica se há uma tab anterior
             if (tabControl1.SelectedIndex > 0)
             {
-                // Retrocede para a tab anterior
+             
                 tabControl1.SelectedIndex--;
-
-                // Atualiza a visibilidade do botão de voltar com base na nova tab ativa
+                buttonAdvance.Text = "Avançar";
                 AtualizarVisibilidadeBotaoVoltar();
             }
         }
-
-     
-
-
-        // metodo que salva a apolice
-        private void apolicesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.apolicesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.corretoraDataSet);
-
-        }
+ 
 
         private void marcaIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {

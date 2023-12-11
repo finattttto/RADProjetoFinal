@@ -12,34 +12,36 @@ namespace RADProjetoFinal
 {
     public partial class FormCadastroCliente : Form
     {
+        FormSimulacao form;
         public FormCadastroCliente()
         {
             InitializeComponent();  
         }
 
+        public FormCadastroCliente(FormSimulacao form)
+        {
+            InitializeComponent();
+            this.form = form;
+        }
+
 
         private void FormCadastroCliente_Load(object sender, EventArgs e)
         {
-            clientesBindingSource.AddNew();
-            int proximoValor = (int)((DataRowView)clientesBindingSource.Current)["ClienteID"];
-            clienteIDTextBox.Text = proximoValor.ToString();
-
+            this.clientesBindingSource.AddNew();
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             try
             {
-                this.tableAdapterManager.ClientesTableAdapter.Insert(
-                    int.Parse(clienteIDTextBox.Text), nomeTextBox.Text, enderecoTextBox.Text, cEPTextBox.Text, cidadeTextBox.Text,
-                    uFComboBox.SelectedItem.ToString(), telefoneTextBox.Text, celularTextBox.Text, cPFTextBox.Text, rGTextBox.Text,
-                    orgaoEmissorTextBox.Text, cartMotoristaTextBox.Text, emissaoCartMotDateTimePicker.Value, cartMotoristaTextBox.Text,
-                    dataNascimentoDateTimePicker.Value, emailTextBox.Text
-                    ) ;
+                DataRowView currentRow = (DataRowView)clientesBindingSource.Current;
+                currentRow["ClienteID"] = int.Parse(clienteIDTextBox.Text);
+
                 this.Validate();
                 this.clientesBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.corretoraDataSet);
                 MessageBox.Show("Cadastro efetuado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                form.cadastrarApolice(int.Parse(clienteIDTextBox.Text));
                 this.Close();
             }
             catch (FormatException ex) {

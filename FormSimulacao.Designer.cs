@@ -36,10 +36,10 @@
             System.Windows.Forms.Label valorDoBemLabel;
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.apolicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.corretoraDataSet = new RADProjetoFinal.CorretoraDataSet();
             this.anoComboBox = new System.Windows.Forms.ComboBox();
             this.tabelaFIPEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.corretoraDataSet = new RADProjetoFinal.CorretoraDataSet();
+            this.apolicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anoFabricacaoTextBox = new System.Windows.Forms.TextBox();
             this.valorComboBox = new System.Windows.Forms.ComboBox();
             this.modeloIDComboBox = new System.Windows.Forms.ComboBox();
@@ -51,9 +51,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.comboBoxCombustivel = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.checkBoxFranquiaReduzida = new System.Windows.Forms.CheckBox();
@@ -79,6 +77,8 @@
             this.viewTabelasFIPETableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.ViewTabelasFIPETableAdapter();
             this.viewModelosTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.ViewModelosTableAdapter();
             this.tabelaFIPETableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.TabelaFIPETableAdapter();
+            this.chassiTextBox = new System.Windows.Forms.TextBox();
+            this.placaTextBox = new System.Windows.Forms.TextBox();
             marcaIDLabel = new System.Windows.Forms.Label();
             modeloIDLabel = new System.Windows.Forms.Label();
             anoFabricacaoLabel = new System.Windows.Forms.Label();
@@ -86,9 +86,9 @@
             valorDoBemLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.apolicesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaFIPEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apolicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewModelosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -181,16 +181,6 @@
             this.tabPage1.Text = "Etapa 1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // apolicesBindingSource
-            // 
-            this.apolicesBindingSource.DataMember = "Apolices";
-            this.apolicesBindingSource.DataSource = this.corretoraDataSet;
-            // 
-            // corretoraDataSet
-            // 
-            this.corretoraDataSet.DataSetName = "CorretoraDataSet";
-            this.corretoraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // anoComboBox
             // 
             this.anoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tabelaFIPEBindingSource, "Ano", true));
@@ -209,6 +199,17 @@
             // 
             this.tabelaFIPEBindingSource.DataMember = "TabelaFIPE";
             this.tabelaFIPEBindingSource.DataSource = this.corretoraDataSet;
+            // 
+            // corretoraDataSet
+            // 
+            this.corretoraDataSet.DataSetName = "CorretoraDataSet";
+            this.corretoraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // apolicesBindingSource
+            // 
+            this.apolicesBindingSource.AllowNew = true;
+            this.apolicesBindingSource.DataMember = "Apolices";
+            this.apolicesBindingSource.DataSource = this.corretoraDataSet;
             // 
             // anoFabricacaoTextBox
             // 
@@ -282,12 +283,12 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.placaTextBox);
+            this.tabPage2.Controls.Add(this.chassiTextBox);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.comboBox4);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.comboBoxCombustivel);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -327,10 +328,11 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Número chassi: ";
             // 
-            // comboBox4
+            // comboBoxCombustivel
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.comboBoxCombustivel.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.apolicesBindingSource, "Combustivel", true));
+            this.comboBoxCombustivel.FormattingEnabled = true;
+            this.comboBoxCombustivel.Items.AddRange(new object[] {
             "Gasolina",
             "Álcool",
             "Diesel",
@@ -338,24 +340,10 @@
             "GNV",
             "Elétrico",
             "Outro"});
-            this.comboBox4.Location = new System.Drawing.Point(233, 239);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(148, 24);
-            this.comboBox4.TabIndex = 16;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(233, 191);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 23);
-            this.textBox2.TabIndex = 15;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(233, 140);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(148, 23);
-            this.textBox6.TabIndex = 13;
+            this.comboBoxCombustivel.Location = new System.Drawing.Point(233, 242);
+            this.comboBoxCombustivel.Name = "comboBoxCombustivel";
+            this.comboBoxCombustivel.Size = new System.Drawing.Size(148, 24);
+            this.comboBoxCombustivel.TabIndex = 16;
             // 
             // label12
             // 
@@ -580,6 +568,22 @@
             // 
             this.tabelaFIPETableAdapter.ClearBeforeFill = true;
             // 
+            // chassiTextBox
+            // 
+            this.chassiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.apolicesBindingSource, "Chassi", true));
+            this.chassiTextBox.Location = new System.Drawing.Point(233, 139);
+            this.chassiTextBox.Name = "chassiTextBox";
+            this.chassiTextBox.Size = new System.Drawing.Size(148, 23);
+            this.chassiTextBox.TabIndex = 25;
+            // 
+            // placaTextBox
+            // 
+            this.placaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.apolicesBindingSource, "Placa", true));
+            this.placaTextBox.Location = new System.Drawing.Point(233, 190);
+            this.placaTextBox.Name = "placaTextBox";
+            this.placaTextBox.Size = new System.Drawing.Size(148, 23);
+            this.placaTextBox.TabIndex = 26;
+            // 
             // FormSimulacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -600,9 +604,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.apolicesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaFIPEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apolicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewModelosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
@@ -629,9 +633,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox comboBoxCombustivel;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -664,5 +666,7 @@
         private System.Windows.Forms.ComboBox valorComboBox;
         private System.Windows.Forms.ComboBox anoComboBox;
         private System.Windows.Forms.TextBox anoFabricacaoTextBox;
+        private System.Windows.Forms.TextBox chassiTextBox;
+        private System.Windows.Forms.TextBox placaTextBox;
     }
 }

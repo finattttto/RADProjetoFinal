@@ -768,7 +768,7 @@ namespace RADProjetoFinal {
                         int ModeloID, 
                         int AnoFabricacao, 
                         int AnoModelo, 
-                        byte Combustivel, 
+                        string Combustivel, 
                         string Chassi, 
                         string Placa, 
                         bool Roubo, 
@@ -867,7 +867,7 @@ namespace RADProjetoFinal {
                 base.Columns.Add(this.columnAnoFabricacao);
                 this.columnAnoModelo = new global::System.Data.DataColumn("AnoModelo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAnoModelo);
-                this.columnCombustivel = new global::System.Data.DataColumn("Combustivel", typeof(byte), null, global::System.Data.MappingType.Element);
+                this.columnCombustivel = new global::System.Data.DataColumn("Combustivel", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCombustivel);
                 this.columnChassi = new global::System.Data.DataColumn("Chassi", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnChassi);
@@ -3075,10 +3075,10 @@ namespace RADProjetoFinal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public byte Combustivel {
+            public string Combustivel {
                 get {
                     try {
-                        return ((byte)(this[this.tableApolices.CombustivelColumn]));
+                        return ((string)(this[this.tableApolices.CombustivelColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("O valor da coluna \'Combustivel\' na tabela \'Apolices\' é DBNull.", e);

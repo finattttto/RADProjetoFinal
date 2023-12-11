@@ -19,10 +19,17 @@ namespace RADProjetoFinal
 
         private void marcasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.marcasBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.corretoraDataSet);
+            try
+            {
+                this.Validate();
+                this.marcasBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.corretoraDataSet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao efetuar alterações! Pode existir uma tabela FIPE associada ao modelo excluído!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            }
         }
 
         private void FormCadastroMarcas_Load(object sender, EventArgs e)
