@@ -36,10 +36,10 @@
             System.Windows.Forms.Label valorDoBemLabel;
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.apolicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.corretoraDataSet = new RADProjetoFinal.CorretoraDataSet();
             this.anoComboBox = new System.Windows.Forms.ComboBox();
             this.tabelaFIPEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.corretoraDataSet = new RADProjetoFinal.CorretoraDataSet();
-            this.apolicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anoFabricacaoTextBox = new System.Windows.Forms.TextBox();
             this.valorComboBox = new System.Windows.Forms.ComboBox();
             this.modeloIDComboBox = new System.Windows.Forms.ComboBox();
@@ -86,9 +86,9 @@
             valorDoBemLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabelaFIPEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apolicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaFIPEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewModelosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -181,6 +181,16 @@
             this.tabPage1.Text = "Etapa 1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // apolicesBindingSource
+            // 
+            this.apolicesBindingSource.DataMember = "Apolices";
+            this.apolicesBindingSource.DataSource = this.corretoraDataSet;
+            // 
+            // corretoraDataSet
+            // 
+            this.corretoraDataSet.DataSetName = "CorretoraDataSet";
+            this.corretoraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // anoComboBox
             // 
             this.anoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tabelaFIPEBindingSource, "Ano", true));
@@ -199,16 +209,6 @@
             // 
             this.tabelaFIPEBindingSource.DataMember = "TabelaFIPE";
             this.tabelaFIPEBindingSource.DataSource = this.corretoraDataSet;
-            // 
-            // corretoraDataSet
-            // 
-            this.corretoraDataSet.DataSetName = "CorretoraDataSet";
-            this.corretoraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // apolicesBindingSource
-            // 
-            this.apolicesBindingSource.DataMember = "Apolices";
-            this.apolicesBindingSource.DataSource = this.corretoraDataSet;
             // 
             // anoFabricacaoTextBox
             // 
@@ -600,9 +600,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabelaFIPEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.apolicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaFIPEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewModelosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);

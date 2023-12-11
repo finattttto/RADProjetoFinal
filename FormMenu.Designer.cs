@@ -29,74 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.carrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabelaFipeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonIniciar = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1043, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // cadastroToolStripMenuItem
-            // 
-            this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.carrosToolStripMenuItem,
-            this.categoriasToolStripMenuItem,
-            this.tabelaFipeToolStripMenuItem,
-            this.toolStripMenuItem2,
-            this.sairToolStripMenuItem});
-            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
-            this.cadastroToolStripMenuItem.Text = "&Cadastro";
-            this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
-            // 
-            // carrosToolStripMenuItem
-            // 
-            this.carrosToolStripMenuItem.Name = "carrosToolStripMenuItem";
-            this.carrosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.carrosToolStripMenuItem.Text = "&Marcas";
-            this.carrosToolStripMenuItem.Click += new System.EventHandler(this.marcasToolStripMenuItem_Click);
-            // 
-            // categoriasToolStripMenuItem
-            // 
-            this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.categoriasToolStripMenuItem.Text = "&Modelos";
-            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
-            // 
-            // tabelaFipeToolStripMenuItem
-            // 
-            this.tabelaFipeToolStripMenuItem.Name = "tabelaFipeToolStripMenuItem";
-            this.tabelaFipeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.tabelaFipeToolStripMenuItem.Text = "&Tabela Fipe";
-            this.tabelaFipeToolStripMenuItem.Click += new System.EventHandler(this.tabelaFipeToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(221, 6);
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.sairToolStripMenuItem.Text = "Sai&r";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // buttonIniciar
             // 
@@ -130,10 +64,8 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1043, 533);
             this.Controls.Add(this.buttonIniciar);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Location = new System.Drawing.Point(173, 100);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMenu";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -141,22 +73,12 @@
             this.Text = "Menu Inicial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormMenu_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem carrosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tabelaFipeToolStripMenuItem;
         private System.Windows.Forms.Button buttonIniciar;
     }
 }

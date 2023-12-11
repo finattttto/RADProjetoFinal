@@ -100,7 +100,7 @@ namespace RADProjetoFinal
                 lblValorApolice.Text += valorApolice.ToString("F" + 2);
                 lblValorPremio.Text += valorPremioTotal.ToString("F" + 2);
                 lblValorFranquia.Text += valorFranquia.ToString("F" + 2);
-                //CONTINUAR CALCULO ONDE COMEÇA AS DATAS DA CNH
+                
             } catch(Exception ex) { }
         }
 
@@ -117,12 +117,23 @@ namespace RADProjetoFinal
                 {
                     calcularValoresApolice();
                 }
-                else if(tabControl1.SelectedIndex == 4)
-                {
-                    this.Validate();
-                    this.apolicesBindingSource.EndEdit();
-                }
 
+            }
+            else if (tabControl1.SelectedIndex == tabControl1.TabCount - 1)
+            {
+                 Console.WriteLine("tab 4 avancar");
+                 Console.WriteLine(this.apolicesBindingSource);
+                try
+                {
+                    //new CadastrarCliente().ShowDialog();
+                    new FormCadastroCliente().ShowDialog();
+                    //this.Validate();
+                    //this.apolicesBindingSource.EndEdit();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao salvar no banco de dados: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
