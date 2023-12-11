@@ -72,7 +72,13 @@ namespace RADProjetoFinal
 
         private void buttonIniciar_Click(object sender, EventArgs e)
         {
-            new FormSimulacao().ShowDialog();
+            try
+            {
+                new FormSimulacao().ShowDialog();
+            }catch (Exception ex)
+            {
+
+            }
         }
 
         private void FormMenu_Load(object sender, EventArgs e)

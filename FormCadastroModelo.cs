@@ -19,9 +19,16 @@ namespace RADProjetoFinal
 
         private void modelosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.modelosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.corretoraDataSet);
+            try
+            {
+                this.Validate();
+                this.modelosBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.corretoraDataSet);
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Erro ao efetuar alterações! Pode existir uma tabela FIPE associada ao modelo excluído!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
 
         }
 

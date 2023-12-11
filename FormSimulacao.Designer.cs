@@ -36,15 +36,16 @@
             System.Windows.Forms.Label valorDoBemLabel;
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.modeloIDComboBox = new System.Windows.Forms.ComboBox();
-            this.apolicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.anoComboBox = new System.Windows.Forms.ComboBox();
+            this.tabelaFIPEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.corretoraDataSet = new RADProjetoFinal.CorretoraDataSet();
-            this.modelosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.apolicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.anoFabricacaoTextBox = new System.Windows.Forms.TextBox();
+            this.valorComboBox = new System.Windows.Forms.ComboBox();
+            this.modeloIDComboBox = new System.Windows.Forms.ComboBox();
+            this.viewModelosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.marcaIDComboBox = new System.Windows.Forms.ComboBox();
             this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.valorDoBemTextBox = new System.Windows.Forms.TextBox();
-            this.anoModeloTextBox = new System.Windows.Forms.TextBox();
-            this.anoFabricacaoTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
@@ -62,7 +63,11 @@
             this.checkBoxCoberturaRoubo = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.lblValorFranquia = new System.Windows.Forms.Label();
+            this.lblValorPremio = new System.Windows.Forms.Label();
+            this.lblValorApolice = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.modelosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonAdvance = new System.Windows.Forms.Button();
@@ -70,13 +75,10 @@
             this.tableAdapterManager = new RADProjetoFinal.CorretoraDataSetTableAdapters.TableAdapterManager();
             this.marcasTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.MarcasTableAdapter();
             this.modelosTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.ModelosTableAdapter();
-            this.lblValorApolice = new System.Windows.Forms.Label();
-            this.lblValorPremio = new System.Windows.Forms.Label();
-            this.lblValorFranquia = new System.Windows.Forms.Label();
             this.viewTabelasFIPEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewTabelasFIPETableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.ViewTabelasFIPETableAdapter();
-            this.viewModelosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewModelosTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.ViewModelosTableAdapter();
+            this.tabelaFIPETableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.TabelaFIPETableAdapter();
             marcaIDLabel = new System.Windows.Forms.Label();
             modeloIDLabel = new System.Windows.Forms.Label();
             anoFabricacaoLabel = new System.Windows.Forms.Label();
@@ -84,15 +86,16 @@
             valorDoBemLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.apolicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaFIPEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apolicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewModelosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewTabelasFIPEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewModelosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // marcaIDLabel
@@ -116,7 +119,7 @@
             // anoFabricacaoLabel
             // 
             anoFabricacaoLabel.AutoSize = true;
-            anoFabricacaoLabel.Location = new System.Drawing.Point(109, 258);
+            anoFabricacaoLabel.Location = new System.Drawing.Point(108, 315);
             anoFabricacaoLabel.Name = "anoFabricacaoLabel";
             anoFabricacaoLabel.Size = new System.Drawing.Size(111, 17);
             anoFabricacaoLabel.TabIndex = 5;
@@ -125,7 +128,7 @@
             // anoModeloLabel
             // 
             anoModeloLabel.AutoSize = true;
-            anoModeloLabel.Location = new System.Drawing.Point(109, 313);
+            anoModeloLabel.Location = new System.Drawing.Point(108, 263);
             anoModeloLabel.Name = "anoModeloLabel";
             anoModeloLabel.Size = new System.Drawing.Size(87, 17);
             anoModeloLabel.TabIndex = 7;
@@ -159,14 +162,14 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.anoComboBox);
+            this.tabPage1.Controls.Add(this.anoFabricacaoTextBox);
+            this.tabPage1.Controls.Add(this.valorComboBox);
             this.tabPage1.Controls.Add(this.modeloIDComboBox);
             this.tabPage1.Controls.Add(this.marcaIDComboBox);
             this.tabPage1.Controls.Add(valorDoBemLabel);
-            this.tabPage1.Controls.Add(this.valorDoBemTextBox);
             this.tabPage1.Controls.Add(anoModeloLabel);
-            this.tabPage1.Controls.Add(this.anoModeloTextBox);
             this.tabPage1.Controls.Add(anoFabricacaoLabel);
-            this.tabPage1.Controls.Add(this.anoFabricacaoTextBox);
             this.tabPage1.Controls.Add(modeloIDLabel);
             this.tabPage1.Controls.Add(marcaIDLabel);
             this.tabPage1.Controls.Add(this.label1);
@@ -177,6 +180,57 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Etapa 1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // anoComboBox
+            // 
+            this.anoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tabelaFIPEBindingSource, "Ano", true));
+            this.anoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.apolicesBindingSource, "AnoModelo", true));
+            this.anoComboBox.DataSource = this.tabelaFIPEBindingSource;
+            this.anoComboBox.DisplayMember = "Ano";
+            this.anoComboBox.FormattingEnabled = true;
+            this.anoComboBox.Location = new System.Drawing.Point(254, 263);
+            this.anoComboBox.Name = "anoComboBox";
+            this.anoComboBox.Size = new System.Drawing.Size(233, 24);
+            this.anoComboBox.TabIndex = 15;
+            this.anoComboBox.ValueMember = "Ano";
+            this.anoComboBox.SelectedIndexChanged += new System.EventHandler(this.anoComboBox_SelectedIndexChanged);
+            // 
+            // tabelaFIPEBindingSource
+            // 
+            this.tabelaFIPEBindingSource.DataMember = "TabelaFIPE";
+            this.tabelaFIPEBindingSource.DataSource = this.corretoraDataSet;
+            // 
+            // corretoraDataSet
+            // 
+            this.corretoraDataSet.DataSetName = "CorretoraDataSet";
+            this.corretoraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // apolicesBindingSource
+            // 
+            this.apolicesBindingSource.DataMember = "Apolices";
+            this.apolicesBindingSource.DataSource = this.corretoraDataSet;
+            // 
+            // anoFabricacaoTextBox
+            // 
+            this.anoFabricacaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.apolicesBindingSource, "AnoFabricacao", true));
+            this.anoFabricacaoTextBox.Location = new System.Drawing.Point(254, 315);
+            this.anoFabricacaoTextBox.Name = "anoFabricacaoTextBox";
+            this.anoFabricacaoTextBox.Size = new System.Drawing.Size(232, 23);
+            this.anoFabricacaoTextBox.TabIndex = 14;
+            // 
+            // valorComboBox
+            // 
+            this.valorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tabelaFIPEBindingSource, "Valor", true));
+            this.valorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.apolicesBindingSource, "ValorDoBem", true));
+            this.valorComboBox.DataSource = this.tabelaFIPEBindingSource;
+            this.valorComboBox.DisplayMember = "Valor";
+            this.valorComboBox.Enabled = false;
+            this.valorComboBox.FormattingEnabled = true;
+            this.valorComboBox.Location = new System.Drawing.Point(255, 370);
+            this.valorComboBox.Name = "valorComboBox";
+            this.valorComboBox.Size = new System.Drawing.Size(231, 24);
+            this.valorComboBox.TabIndex = 13;
+            this.valorComboBox.ValueMember = "Valor";
             // 
             // modeloIDComboBox
             // 
@@ -190,22 +244,12 @@
             this.modeloIDComboBox.Size = new System.Drawing.Size(232, 24);
             this.modeloIDComboBox.TabIndex = 12;
             this.modeloIDComboBox.ValueMember = "ModeloID";
-       
+            this.modeloIDComboBox.SelectedIndexChanged += new System.EventHandler(this.modeloIDComboBox_SelectedIndexChanged);
             // 
-            // apolicesBindingSource
+            // viewModelosBindingSource
             // 
-            this.apolicesBindingSource.DataMember = "Apolices";
-            this.apolicesBindingSource.DataSource = this.corretoraDataSet;
-            // 
-            // corretoraDataSet
-            // 
-            this.corretoraDataSet.DataSetName = "CorretoraDataSet";
-            this.corretoraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // modelosBindingSource
-            // 
-            this.modelosBindingSource.DataMember = "Modelos";
-            this.modelosBindingSource.DataSource = this.corretoraDataSet;
+            this.viewModelosBindingSource.DataMember = "ViewModelos";
+            this.viewModelosBindingSource.DataSource = this.corretoraDataSet;
             // 
             // marcaIDComboBox
             // 
@@ -219,35 +263,12 @@
             this.marcaIDComboBox.Size = new System.Drawing.Size(231, 24);
             this.marcaIDComboBox.TabIndex = 11;
             this.marcaIDComboBox.ValueMember = "ID";
+            this.marcaIDComboBox.SelectedIndexChanged += new System.EventHandler(this.marcaIDComboBox_SelectedIndexChanged);
             // 
             // marcasBindingSource
             // 
             this.marcasBindingSource.DataMember = "Marcas";
             this.marcasBindingSource.DataSource = this.corretoraDataSet;
-            // 
-            // valorDoBemTextBox
-            // 
-            this.valorDoBemTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.apolicesBindingSource, "ValorDoBem", true));
-            this.valorDoBemTextBox.Location = new System.Drawing.Point(255, 369);
-            this.valorDoBemTextBox.Name = "valorDoBemTextBox";
-            this.valorDoBemTextBox.Size = new System.Drawing.Size(232, 23);
-            this.valorDoBemTextBox.TabIndex = 10;
-            // 
-            // anoModeloTextBox
-            // 
-            this.anoModeloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.apolicesBindingSource, "AnoModelo", true));
-            this.anoModeloTextBox.Location = new System.Drawing.Point(255, 313);
-            this.anoModeloTextBox.Name = "anoModeloTextBox";
-            this.anoModeloTextBox.Size = new System.Drawing.Size(232, 23);
-            this.anoModeloTextBox.TabIndex = 8;
-            // 
-            // anoFabricacaoTextBox
-            // 
-            this.anoFabricacaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.apolicesBindingSource, "AnoFabricacao", true));
-            this.anoFabricacaoTextBox.Location = new System.Drawing.Point(255, 258);
-            this.anoFabricacaoTextBox.Name = "anoFabricacaoTextBox";
-            this.anoFabricacaoTextBox.Size = new System.Drawing.Size(232, 23);
-            this.anoFabricacaoTextBox.TabIndex = 6;
             // 
             // label1
             // 
@@ -439,6 +460,33 @@
             this.tabPage4.Text = "Etapa 4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // lblValorFranquia
+            // 
+            this.lblValorFranquia.AutoSize = true;
+            this.lblValorFranquia.Location = new System.Drawing.Point(46, 152);
+            this.lblValorFranquia.Name = "lblValorFranquia";
+            this.lblValorFranquia.Size = new System.Drawing.Size(125, 17);
+            this.lblValorFranquia.TabIndex = 17;
+            this.lblValorFranquia.Text = "Valor da Franquia:";
+            // 
+            // lblValorPremio
+            // 
+            this.lblValorPremio.AutoSize = true;
+            this.lblValorPremio.Location = new System.Drawing.Point(47, 118);
+            this.lblValorPremio.Name = "lblValorPremio";
+            this.lblValorPremio.Size = new System.Drawing.Size(113, 17);
+            this.lblValorPremio.TabIndex = 16;
+            this.lblValorPremio.Text = "Valor do Prêmio:";
+            // 
+            // lblValorApolice
+            // 
+            this.lblValorApolice.AutoSize = true;
+            this.lblValorApolice.Location = new System.Drawing.Point(47, 87);
+            this.lblValorApolice.Name = "lblValorApolice";
+            this.lblValorApolice.Size = new System.Drawing.Size(115, 17);
+            this.lblValorApolice.TabIndex = 15;
+            this.lblValorApolice.Text = "Valor da Apólice:";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -448,6 +496,11 @@
             this.label11.Size = new System.Drawing.Size(196, 26);
             this.label11.TabIndex = 14;
             this.label11.Text = "Cálculo da apólice:";
+            // 
+            // modelosBindingSource
+            // 
+            this.modelosBindingSource.DataMember = "Modelos";
+            this.modelosBindingSource.DataSource = this.corretoraDataSet;
             // 
             // buttonExit
             // 
@@ -510,33 +563,6 @@
             // 
             this.modelosTableAdapter.ClearBeforeFill = true;
             // 
-            // lblValorApolice
-            // 
-            this.lblValorApolice.AutoSize = true;
-            this.lblValorApolice.Location = new System.Drawing.Point(47, 87);
-            this.lblValorApolice.Name = "lblValorApolice";
-            this.lblValorApolice.Size = new System.Drawing.Size(115, 17);
-            this.lblValorApolice.TabIndex = 15;
-            this.lblValorApolice.Text = "Valor da Apólice:";
-            // 
-            // lblValorPremio
-            // 
-            this.lblValorPremio.AutoSize = true;
-            this.lblValorPremio.Location = new System.Drawing.Point(47, 118);
-            this.lblValorPremio.Name = "lblValorPremio";
-            this.lblValorPremio.Size = new System.Drawing.Size(113, 17);
-            this.lblValorPremio.TabIndex = 16;
-            this.lblValorPremio.Text = "Valor do Prêmio:";
-            // 
-            // lblValorFranquia
-            // 
-            this.lblValorFranquia.AutoSize = true;
-            this.lblValorFranquia.Location = new System.Drawing.Point(46, 152);
-            this.lblValorFranquia.Name = "lblValorFranquia";
-            this.lblValorFranquia.Size = new System.Drawing.Size(125, 17);
-            this.lblValorFranquia.TabIndex = 17;
-            this.lblValorFranquia.Text = "Valor da Franquia:";
-            // 
             // viewTabelasFIPEBindingSource
             // 
             this.viewTabelasFIPEBindingSource.DataMember = "ViewTabelasFIPE";
@@ -546,14 +572,13 @@
             // 
             this.viewTabelasFIPETableAdapter.ClearBeforeFill = true;
             // 
-            // viewModelosBindingSource
-            // 
-            this.viewModelosBindingSource.DataMember = "ViewModelos";
-            this.viewModelosBindingSource.DataSource = this.corretoraDataSet;
-            // 
             // viewModelosTableAdapter
             // 
             this.viewModelosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tabelaFIPETableAdapter
+            // 
+            this.tabelaFIPETableAdapter.ClearBeforeFill = true;
             // 
             // FormSimulacao
             // 
@@ -575,9 +600,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.apolicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaFIPEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apolicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewModelosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -585,8 +611,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.modelosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewTabelasFIPEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewModelosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -619,9 +645,6 @@
         private CorretoraDataSetTableAdapters.ApolicesTableAdapter apolicesTableAdapter;
         private CorretoraDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox valorDoBemTextBox;
-        private System.Windows.Forms.TextBox anoModeloTextBox;
-        private System.Windows.Forms.TextBox anoFabricacaoTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox marcaIDComboBox;
         private System.Windows.Forms.BindingSource marcasBindingSource;
@@ -636,5 +659,10 @@
         private CorretoraDataSetTableAdapters.ViewTabelasFIPETableAdapter viewTabelasFIPETableAdapter;
         private System.Windows.Forms.BindingSource viewModelosBindingSource;
         private CorretoraDataSetTableAdapters.ViewModelosTableAdapter viewModelosTableAdapter;
+        private System.Windows.Forms.BindingSource tabelaFIPEBindingSource;
+        private CorretoraDataSetTableAdapters.TabelaFIPETableAdapter tabelaFIPETableAdapter;
+        private System.Windows.Forms.ComboBox valorComboBox;
+        private System.Windows.Forms.ComboBox anoComboBox;
+        private System.Windows.Forms.TextBox anoFabricacaoTextBox;
     }
 }
