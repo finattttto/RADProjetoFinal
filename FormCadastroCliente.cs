@@ -32,6 +32,12 @@ namespace RADProjetoFinal
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            if (nomeTextBox.TextLength < 2)
+            {
+                MessageBox.Show("Digite um nome!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             try
             {
                 DataRowView currentRow = (DataRowView)clientesBindingSource.Current;

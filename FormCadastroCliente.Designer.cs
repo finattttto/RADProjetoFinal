@@ -45,11 +45,7 @@ namespace RADProjetoFinal
             System.Windows.Forms.Label categoriaMotLabel;
             System.Windows.Forms.Label dataNascimentoLabel;
             System.Windows.Forms.Label emailLabel;
-            System.Windows.Forms.Label clienteIDLabel;
-            this.corretoraDataSet = new RADProjetoFinal.CorretoraDataSet();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientesTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.ClientesTableAdapter();
-            this.tableAdapterManager = new RADProjetoFinal.CorretoraDataSetTableAdapters.TableAdapterManager();
+            this.clienteIDLabel = new System.Windows.Forms.Label();
             this.enderecoTextBox = new System.Windows.Forms.TextBox();
             this.cidadeTextBox = new System.Windows.Forms.TextBox();
             this.uFComboBox = new System.Windows.Forms.ComboBox();
@@ -70,6 +66,10 @@ namespace RADProjetoFinal
             this.cEPTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.clienteIDTextBox = new System.Windows.Forms.TextBox();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.corretoraDataSet = new RADProjetoFinal.CorretoraDataSet();
+            this.clientesTableAdapter = new RADProjetoFinal.CorretoraDataSetTableAdapters.ClientesTableAdapter();
+            this.tableAdapterManager = new RADProjetoFinal.CorretoraDataSetTableAdapters.TableAdapterManager();
             enderecoLabel = new System.Windows.Forms.Label();
             cEPLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
@@ -85,12 +85,11 @@ namespace RADProjetoFinal
             categoriaMotLabel = new System.Windows.Forms.Label();
             dataNascimentoLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
-            clienteIDLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // enderecoLabel
@@ -243,29 +242,14 @@ namespace RADProjetoFinal
             emailLabel.TabIndex = 28;
             emailLabel.Text = "Email:";
             // 
-            // corretoraDataSet
+            // clienteIDLabel
             // 
-            this.corretoraDataSet.DataSetName = "CorretoraDataSet";
-            this.corretoraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clientesBindingSource
-            // 
-            this.clientesBindingSource.DataMember = "Clientes";
-            this.clientesBindingSource.DataSource = this.corretoraDataSet;
-            // 
-            // clientesTableAdapter
-            // 
-            this.clientesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ApolicesTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ClientesTableAdapter = this.clientesTableAdapter;
-            this.tableAdapterManager.MarcasTableAdapter = null;
-            this.tableAdapterManager.ModelosTableAdapter = null;
-            this.tableAdapterManager.TabelaFIPETableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = RADProjetoFinal.CorretoraDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.clienteIDLabel.AutoSize = true;
+            this.clienteIDLabel.Location = new System.Drawing.Point(282, 340);
+            this.clienteIDLabel.Name = "clienteIDLabel";
+            this.clienteIDLabel.Size = new System.Drawing.Size(56, 13);
+            this.clienteIDLabel.TabIndex = 33;
+            this.clienteIDLabel.Text = "Cliente ID:";
             // 
             // enderecoTextBox
             // 
@@ -496,15 +480,6 @@ namespace RADProjetoFinal
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informações da CNH:";
             // 
-            // clienteIDLabel
-            // 
-            clienteIDLabel.AutoSize = true;
-            clienteIDLabel.Location = new System.Drawing.Point(282, 340);
-            clienteIDLabel.Name = "clienteIDLabel";
-            clienteIDLabel.Size = new System.Drawing.Size(56, 13);
-            clienteIDLabel.TabIndex = 33;
-            clienteIDLabel.Text = "Cliente ID:";
-            // 
             // clienteIDTextBox
             // 
             this.clienteIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "ClienteID", true));
@@ -513,12 +488,36 @@ namespace RADProjetoFinal
             this.clienteIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.clienteIDTextBox.TabIndex = 34;
             // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "Clientes";
+            this.clientesBindingSource.DataSource = this.corretoraDataSet;
+            // 
+            // corretoraDataSet
+            // 
+            this.corretoraDataSet.DataSetName = "CorretoraDataSet";
+            this.corretoraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientesTableAdapter
+            // 
+            this.clientesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.ApolicesTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClientesTableAdapter = this.clientesTableAdapter;
+            this.tableAdapterManager.MarcasTableAdapter = null;
+            this.tableAdapterManager.ModelosTableAdapter = null;
+            this.tableAdapterManager.TabelaFIPETableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = RADProjetoFinal.CorretoraDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // FormCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 452);
-            this.Controls.Add(clienteIDLabel);
+            this.Controls.Add(this.clienteIDLabel);
             this.Controls.Add(this.clienteIDTextBox);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -526,16 +525,17 @@ namespace RADProjetoFinal
             this.Controls.Add(this.btnConfirmar);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCadastroCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastroCliente";
             this.Load += new System.EventHandler(this.FormCadastroCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.corretoraDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -567,5 +567,6 @@ namespace RADProjetoFinal
         private System.Windows.Forms.TextBox nomeTextBox;
         private System.Windows.Forms.TextBox cEPTextBox;
         private System.Windows.Forms.TextBox clienteIDTextBox;
+        private System.Windows.Forms.Label clienteIDLabel;
     }
 }
